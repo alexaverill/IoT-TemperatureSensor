@@ -15,6 +15,7 @@ class MQTTClient{
 
         }
         bool connect(){
+            if(mqtt.connected()) { return;}
             mqtt.connect(name,username,password);
             for(auto retries =0; retries<retryAmount; retries++){
                 if(mqtt.connected()){
@@ -26,6 +27,7 @@ class MQTTClient{
             return false;
         }
         void publish(StaticJsonDocument<256> *doc, char *topic){
+            connect();
             char jsonBuff[256];
             serializeJson(doc,jsonBuff);
             mqtt.publish(topic,jsonBuff);
