@@ -1,4 +1,3 @@
-#pragma once
 #ifndef TEMPERATURECLIENT_H
 #define TEMPERATURECLIENT_H
 #include "GeneralMQTTClient.h"
@@ -18,7 +17,7 @@ class TemperatureClient:public GeneralMQTTClient{
             doc["humidity"] = humidity;
             doc["feelsLike"]=feelsLike;
             doc["location"] = location;
-            publish(&doc,topic);
+            //publish(&doc,topic);
         }
     private:
         char *topic= "tempSense";
