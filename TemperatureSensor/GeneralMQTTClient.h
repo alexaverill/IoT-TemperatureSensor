@@ -14,7 +14,7 @@ class GeneralMQTTClient{
         {
             mqtt.setClient(client);
             mqtt.setServer(endpoint,port);
-
+            connect();
         }
         bool connect(){
             if(mqtt.connected()) { return false;}
@@ -31,8 +31,8 @@ class GeneralMQTTClient{
         void publish(StaticJsonDocument<256> *doc, char *topic){
             connect();
             char jsonBuff[256];
-            //serializeJson(&doc,jsonBuff);
-            //mqtt.publish(topic,jsonBuff);
+            serializeJson(*doc,jsonBuff);
+            mqtt.publish(topic,jsonBuff);
         }
     private:
         WiFiClient client = WiFiClient();

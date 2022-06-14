@@ -12,11 +12,11 @@ class TemperatureClient:public GeneralMQTTClient{
             location = _location;
         }
         void sendMessage(float temperature,float humidity,float feelsLike){
-            StaticJsonDocument<256> doc;
-            doc["temperature"] = temperature;
-            doc["humidity"] = humidity;
-            doc["feelsLike"]=feelsLike;
-            doc["location"] = location;
+            // StaticJsonDocument<256> doc;
+            // doc["temperature"] = temperature;
+            // doc["humidity"] = humidity;
+            // doc["feelsLike"]=feelsLike;
+            // doc["location"] = location;
             //publish(&doc,topic);
         }
     private:

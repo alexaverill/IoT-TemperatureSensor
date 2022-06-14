@@ -1,6 +1,7 @@
 {
-    "sketch": "TemperatureSensor.ino",
+    "sketch": "TemperatureSensor/TemperatureSensor.ino",
     "configuration": "FlashFreq=80,UploadSpeed=921600,DebugLevel=none",
     "board": "esp32:esp32:ttgo-lora32-v21new",
-    "port": "/dev/ttyUSB0"
+    "port": "/dev/ttyUSB0",
+    "output": "./build"
 }
